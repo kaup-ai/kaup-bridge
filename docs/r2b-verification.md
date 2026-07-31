@@ -31,7 +31,8 @@ mkdir -p specs/000-r2b-smoke
 
 ⚠️ **T8 concern 2**: if you run `extension add` BEFORE `integration install`, the
 extension's command does NOT render to the newly-added integration. If the skill
-doesn't appear in step 2 below, run `specify extension upgrade` to re-render.
+doesn't appear in step 2 below, re-run `specify extension add`, or switch agent
+with `specify integration switch <agent>` (which re-renders — verified).
 
 ## Codex R2b
 
@@ -65,7 +66,7 @@ Open an OpenCode session in the project directory.
 
 | Symptom | Check |
 |---|---|
-| skill not in list | `specify extension list \| grep kaup-bridge` + `specify integration status`; if integration was added after `extension add`, run `specify extension upgrade` |
+| skill not in list | `specify extension list \| grep kaup-bridge` + `specify integration status`; to change agent use `specify integration switch <new>` (uninstalls current + installs new + re-renders extension, verified) |
 | superpowers not loaded | confirm the agent has superpowers installed (Codex `~/.codex/config.toml` / OpenCode `opencode.json` plugin entry) |
 | `superpowers:xxx` reference syntax error | T8 R2a proved the canonical style compatible, but a live trigger may expose an edge case → record the Codex/OpenCode verbatim error and report back; execute.md's skill-reference syntax may need a per-harness adaptation |
 

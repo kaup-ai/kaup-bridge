@@ -62,9 +62,10 @@ specify integration switch opencode
 ### Multi-harness note
 
 Extension commands render only to the integration active at `specify
-extension add` time. If you add a new integration afterward, re-run
-`specify extension upgrade` (or `specify extension add` again) to render
-commands to the new integration.
+extension add` time. To switch to a different agent, run
+`specify integration switch <new-agent>` — it uninstalls the current
+integration, installs the new one, and re-renders extension commands to
+the new agent (verified).
 
 ## Usage
 
