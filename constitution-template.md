@@ -91,10 +91,10 @@ save.
 ### IX. Integration-First Testing
 
 Integration tests MUST cover every cross-module flow end-to-end.
-Mandatory integration-test focus: new module-contract tests, contract
-changes between kaup-core services, kaup-frontend ↔ kaup-core
-interaction, shared-schema changes (e.g., `kaup-common/schema.sql`),
-and cross-repo flows (Article VI). Unit tests alone are insufficient
+Mandatory integration-test focus: new module-contract tests, <PROJECT:
+your cross-module / cross-service boundaries — e.g. contract changes
+between <service-A> and <service-B>, shared-schema changes (e.g.
+<shared-schema path>)>, and cross-repo flows (Article VI). Unit tests alone are insufficient
 for flow-level correctness claims.
 
 **Rationale**: The most damaging defects are often integration-level; unit-green
