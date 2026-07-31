@@ -1,0 +1,39 @@
+schema_version: "1.0"
+
+preset:
+  id: "kaup"
+  name: "Kaup Hybrid Workflow"
+  version: "0.1.0"
+  description: >-
+    Preset for the spec-kit hybrid workflow. Wraps the core
+    specify command so that a brainstorm session's pre-allocated date-slug
+    feature-id (specs/<id>/brainstorm.md) is reused automatically when
+    specify runs, bypassing spec-kit sequential/timestamp auto-numbering.
+  author: "kaup-ai"
+  repository: "https://github.com/kaup-ai/kaup-bridge"
+  license: "Apache-2.0"
+
+requires:
+  speckit_version: ">=0.15.0"
+
+provides:
+  templates:
+    # Wrap strategy: the command body contains a {CORE_TEMPLATE} placeholder
+    # that PresetResolver expands to the real core specify command body
+    # (resolve_core skips tier-2 presets, so it finds the genuine core at
+    # tier-4/5 rather than this wrap). This auto-tracks core upgrades with
+    # zero maintenance, in contrast to a project-local replace override.
+    - type: "command"
+      name: "speckit.specify"
+      file: "commands/speckit.specify.md"
+      description: >-
+        kaup specify wrap — bridges brainstorm→specify by auto-reusing the
+        brainstorm feature-id (SPECIFY_FEATURE_DIRECTORY) when exactly one
+        specs/<id>/brainstorm.md exists without a spec.md.
+      strategy: "wrap"
+      replaces: "speckit.specify"
+
+tags:
+  - "kaup"
+  - "hybrid-workflow"
+  - "brainstorm-bridge"

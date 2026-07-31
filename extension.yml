@@ -1,0 +1,22 @@
+schema_version: "1.0"
+
+extension:
+  id: kaup-bridge
+  name: "Kaup Superpowers Bridge"
+  version: "1.0.0"
+  description: "Bridge replacing /speckit-implement with Superpowers SDD execution of tasks.md"
+  author: kaup-ai
+  repository: https://github.com/kaup-ai/kaup-bridge
+  license: Apache-2.0
+
+requires:
+  speckit_version: ">=0.15.0"
+
+provides:
+  commands:
+    - name: speckit.kaup-bridge.execute
+      file: commands/speckit.kaup-bridge.execute.md
+      description: "Execute specs/<feature-id>/tasks.md via Superpowers SDD (replaces /speckit-implement)"
+
+# hooks: 不配 after_tasks（spec §4 — 手动触发，对齐 Article V「每 task STOP 等用户」）
+# tags: 省略（私有仓不发布 spec-kit catalog）
