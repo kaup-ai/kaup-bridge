@@ -34,7 +34,7 @@ adaptation is delegated to spec-kit's `specify integration` mechanism
 
 | layer | command | role |
 |---|---|---|
-| extension | `specify extension add <name> --from <git-url>` | registers the execute command source |
+| extension | `specify extension add <name> --from <zip-url>` | registers the execute command source |
 | integration | `specify integration install claude\|codex\|opencode` | activates the target agent, renders commands to that agent's command surface |
 
 Both ends are native tools, installed separately per harness:

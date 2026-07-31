@@ -13,7 +13,7 @@
 ```bash
 # 1. Install kaup-bridge + activate the agent's integration
 #    From GitHub (name + --from url; --from is an option, the name is the positional arg):
-specify extension add kaup-bridge --from https://github.com/kaup-ai/kaup-bridge.git
+specify extension add kaup-bridge --from https://github.com/kaup-ai/kaup-bridge/archive/refs/heads/main.zip
 #    Or from a local clone (--dev is a flag, the path is the positional arg, NO name):
 #       specify extension add --dev /path/to/kaup-bridge
 specify integration install codex          # or: opencode
