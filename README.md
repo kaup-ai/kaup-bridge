@@ -27,7 +27,7 @@ kaup-bridge is a spec-kit extension. Install it into your spec-kit project,
 then activate your coding agent's integration:
 
 ```bash
-specify extension add kaup-bridge --from https://github.com/kaup-ai/kaup-bridge.git
+specify extension add --from https://github.com/kaup-ai/kaup-bridge.git
 specify integration install claude   # or: codex / opencode
 ```
 
@@ -35,7 +35,7 @@ For local development / before the repo is pushed, install from a local path
 instead:
 
 ```bash
-specify extension add kaup-bridge --dev /path/to/kaup-bridge
+specify extension add --dev /path/to/kaup-bridge
 ```
 
 Then install superpowers for your agent — see the
