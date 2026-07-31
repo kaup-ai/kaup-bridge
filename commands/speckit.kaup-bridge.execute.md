@@ -10,7 +10,7 @@ $ARGUMENTS
 
 `$ARGUMENTS` is the **feature-id** — the directory name under `specs/` that
 holds `tasks.md` and `plan.md` for the feature
-(e.g. `2026-07-22-sequence-abort-cli`). It resolves to
+(e.g. `2026-07-22-my-feature`). It resolves to
 `specs/$ARGUMENTS/tasks.md`.
 
 You **MUST** consider the user input before proceeding (if not empty).
@@ -228,7 +228,7 @@ so future extensions can plug in without rewriting this command.
        downgrading — do not silently let cross-task breaks slip. The
        asymmetry is intentional: a degraded per-task pass still adds
        value, but a degraded whole-branch pass would negate the entire
-       reason the two-layer model exists (the dry-run M1/M3/M4 catches
+       reason the two-layer model exists (the dry-run cross-slice catches
        were opus-only).
      - Models use tier aliases (`haiku` / `sonnet` / `opus`) resolved by
        the provider.
