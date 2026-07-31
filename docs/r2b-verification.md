@@ -11,8 +11,11 @@
 ## Prerequisites (~5 min, shared)
 
 ```bash
-# 1. Install kaup-bridge (now on GitHub) + activate the agent's integration
-specify extension add --from https://github.com/kaup-ai/kaup-bridge.git
+# 1. Install kaup-bridge + activate the agent's integration
+#    From GitHub (name + --from url; --from is an option, the name is the positional arg):
+specify extension add kaup-bridge --from https://github.com/kaup-ai/kaup-bridge.git
+#    Or from a local clone (--dev is a flag, the path is the positional arg, NO name):
+#       specify extension add --dev /path/to/kaup-bridge
 specify integration install codex          # or: opencode
 
 # 2. Install NATIVE superpowers for that agent (kaup-bridge references, not bundles)
