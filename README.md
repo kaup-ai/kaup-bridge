@@ -59,6 +59,13 @@ switch rather than installing alongside it:
 specify integration switch opencode
 ```
 
+### Multi-harness note
+
+Extension commands render only to the integration active at `specify
+extension add` time. If you add a new integration afterward, re-run
+`specify extension upgrade` (or `specify extension add` again) to render
+commands to the new integration.
+
 ## Usage
 
 ```text
