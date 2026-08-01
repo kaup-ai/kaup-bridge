@@ -42,8 +42,9 @@ Open a Codex CLI session in the project directory.
    → expect: brainstorming / subagent-driven-development / test-driven-development / etc.
 2. **kaup-bridge execute registered?** Ask: `list your available skills/commands`
    → expect: `speckit-kaup-bridge-execute` in the list
-3. **Trigger execute**: `/speckit-kaup-bridge-execute 000-r2b-smoke`
-   (or Codex's native skill-invocation syntax)
+3. **Trigger execute**: `$speckit-kaup-bridge-execute 000-r2b-smoke`
+   (Codex invokes skills with `$` prefix, NOT `/` slash — per spec-kit docs.
+   `/speckit-*` is Claude Code style; Codex and Zed use `$speckit-*`.)
 4. **Observe**:
    - execute.md body loads (Codex reads the SDD SOP)
    - dispatches an implementer subagent for task 1
@@ -59,7 +60,11 @@ Open an OpenCode session in the project directory.
    → expect: superpowers skills present
 2. **kaup-bridge registered?** `use skill tool to list`
    → expect: `speckit-kaup-bridge-execute`
-3. **Trigger execute**: `use skill tool to load speckit-kaup-bridge-execute` (per superpowers' `.opencode/INSTALL.md` invocation style), feature-id `000-r2b-smoke`
+3. **Trigger execute**: opencode's spec-kit invocation style is **not documented**
+   (spec-kit integrations table has empty Notes for opencode). The command is
+   rendered to `.opencode/commands/speckit.kaup-bridge.execute.md`. Try opencode's
+   native command invocation for it, or ask opencode to load/run the skill with
+   feature-id `000-r2b-smoke`. **Record what works** — this is itself an R2b finding.
 4. **Observe + Verdict**: same as Codex steps 4-5
 
 ## FAIL triage (most likely culprits)
