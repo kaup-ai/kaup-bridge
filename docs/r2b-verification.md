@@ -70,12 +70,19 @@ Open an OpenCode session in the project directory.
 | superpowers not loaded | confirm the agent has superpowers installed (Codex `~/.codex/config.toml` / OpenCode `opencode.json` plugin entry) |
 | `superpowers:xxx` reference syntax error | T8 R2a proved the canonical style compatible, but a live trigger may expose an edge case → record the Codex/OpenCode verbatim error and report back; execute.md's skill-reference syntax may need a per-harness adaptation |
 
-## Result record (fill in after running)
+## Result record (fill in below after running)
 
-Append your findings as a new `## R2b result — <date>` section in
-`docs/dry-run-codex-opencode.md` (the T8 evidence doc): per-agent PASS/FAIL +
-the observations/errors you saw.
+Record per-agent PASS/FAIL + observations/errors right here in this file
+(you don't need dry-run-codex-opencode.md — that's the T8 historical evidence;
+R2b result stays here):
 
+### Codex R2b — <date>
+<!-- PASS/FAIL + what you observed: superpowers loaded? execute triggered? SDD started? per-task STOP? verbatim errors if any -->
+
+### OpenCode R2b — <date>
+<!-- same -->
+
+### Verdict
 - **Both agents PASS** → R2b resolved. kaup-bridge is genuinely three-platform
   equivalent (including live trigger). The extraction feature is 100% closed.
 - **FAIL** → report back; likely a new task to adapt execute.md's skill-reference
